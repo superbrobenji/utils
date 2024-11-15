@@ -16,6 +16,7 @@
         "wellon"
     ],
     "dependencies": {
+        "asyncrify": "^0.2.9",
         "file-type": "^16.0.1"
     },
     "devDependencies": {
