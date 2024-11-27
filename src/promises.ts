@@ -35,10 +35,7 @@ async function throttle<T>(
   const queue = new Asyncrify(maxConcurrency);
   for (let i = 0; i < promises.length; i++) {
     returnArray[i] = new Promise((resolve, reject) => {
-      queue.add(promises[i], (res, err) => {
-        if (err) reject(err);
-        resolve(res);
-      });
+      queue.add(promises[i], resolve, reject);
     });
   }
   return Promise.all(returnArray);
